@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <meta http-equiv="content-type" charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <tile></tile>
+    </head>
+    <body>
+        <div class ="top_nav"><!--上導覽頁-->
+            <div class="top_block">
+                The Project
+            </div>
+            <div class="search">
+                <input type="type" id="search_block" value="">
+                <button onclick= "" id="btn">搜尋商品</button>
+            </div>
+            <div class="right_nav">
+                <div class="button_1"onclick="page('index.html')" >首頁</div>
+                <div class="button_1"onclick="">商品</div>
+                <div class="button_1"onclick="" >優惠</div>
+                <div class="button_1"onclick="" >購物車</div>
+                <div class="button_1"onclick="page('member.html')" >會員</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="ad1" onmouseenter="food_content('cot')" onmouseleave="food_content_L('cot')">
+                <div class="cot"  onclick="page('index.html')">
+                肥美鮭魚<br>原產地(國)：智利&nbsp&nbsp&nbsp特價320元
+                </div>
+            </div>
+            <div class="ad2" onmouseenter="food_content('cot2')" onmouseleave="food_content_L('cot2')">
+                <div class="cot2" onclick="page('index.html')">
+                特級鮮乳<br>原產地(國)：臺灣&nbsp&nbsp&nbsp特價:90元
+                </div>
+            </div>
+            <div class="ad3" onmouseenter="food_content('cot3')" onmouseleave="food_content_L('cot3')">
+                <div class="cot3" onclick="page('index.html')">
+                豪華咖啡蛋糕<br>原產地(國)：美國&nbsp&nbsp&nbsp特價:129元
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <button id="sw_L" onclick="show_L()"><</button>
+            <div class="ad4_div"><img class="ad4" id="slideshow"><div class="load">Loading...</div></img></div>
+            <button id="sw_R" onclick="show_R()">></button>
+            <div class="ad4_content">
+                <div class="ad_pf">熱賣商品</div>
+                <div class="border_div100"></div>
+                <p class="ad_p">TOP1 鮭魚 300g (智利產)</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">TOP2 牛奶 380g (臺灣製)</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">TOP3 豪華咖啡蛋糕 200g (美國製)</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">這是一項商品</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">這是一項商品</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">這是一項商品</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">這是一項商品</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">這是一項商品</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">這是一項商品</p>
+                <div class="border_div80"></div>
+                <p class="ad_p">這是一項商品</p>
+            </div>
+        </div>
+        <div class="border_div80"></div>
+        <div class="nav_down">
+            <div class="down_bl">
+                <div class="bl">常見問與答</div>
+                <div class="bl">服務條款</div>
+            </div>
+            <div class="down_bl">
+                <div class="bl">聯絡我們</div>
+                <div class="bl">隱私權政策</div>
+            </div>
+            <div class="down_bl">
+                <div class="bl">關於我們</div>
+                <div class="bl">FB粉絲團</div>
+            </div>
+        </div>
+        <script src="javascript/index.js"></script> 
+    </body>
+</html>
