@@ -61,6 +61,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     font-size: 18px;
 }
 .button_1{
+    box-sizing: border-box;
     width: 20%;
     height: 8.5vh;
     display: block;
@@ -73,6 +74,10 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     font-weight: bold;
     color:#000;
     text-decoration: none;
+}
+
+.border_bot{
+    border-bottom: 3px solid black;
 }
 .button_1:hover{
     background-color: #000;
