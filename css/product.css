@@ -146,7 +146,9 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體'; 
 .product_page{
     max-width: 80vw;
     overflow:unset;
-    display: block;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:left;
     margin-top: 5vh;
     box-sizing: border-box;
     width: 80vw;
@@ -156,10 +158,41 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體'; 
 }
 
 .product_img{
-    margin-left:3.1vw;
-    margin-right:3.1vw;
-    margin-top:3vw;
-    width:16vw;
-    height:12vw;
+    width:14vw;
+    height:10.5vw;
     border:1px solid black;
+    border-radius: 5%;
+}
+
+.pro_title_st{
+    width: auto;
+    font-size: 60px;
+}
+
+.pro_div{
+    text-align: center;
+    font-size: medium;
+    margin-left: 2.9vw;
+    margin-right: 2.9vw;
+    margin-top: 1vw;
+    width:14vw ;
+    height: auto;
+}
+
+.price{
+    color: red;
+    font-weight: bolder;
+    font-size: medium;
+    padding: 1.5px;
+}
+
+.pro_title{
+    font-weight: bold;
+    font-size: larger;
+    padding: 1.5px;
+}
+
+.pro_con{
+    font-size: small;
+    padding: 1.5px;
 }

@@ -16,12 +16,39 @@ window.onload=function(){
         ,['義大利麵','原產地(國):義大利','特價:169元','product/noodles.jpg']
         ,['披薩','原產地(國):美國','特價:495元','product/pizza.jpg']
     ];
-    let create=document.getElementById("product_create");
+    
     let number=product.length;
     for(number=0;number<10;number++){
+        /*創建商品div*/
+        let create=document.getElementById("product_create");
+        let block=document.createElement("div");
+        block.className+="pro_div";
+        block.setAttribute('id','div_id'+number)
+        create.appendChild(block);
+        /*商品圖片 */
+        let create_div=document.getElementById('div_id'+number);
         let img_pro=document.createElement("img");
         img_pro.src=product[number][3];
         img_pro.className+="product_img";
-        create.appendChild(img_pro);
+        img_pro.setAttribute('id','product_id'+number);
+        create_div.appendChild(img_pro);
+        /*商品標題 */
+        let title_div=document.createElement("div");
+        title_div.className+="pro_title";
+        create_div.appendChild(title_div)
+        let title=document.createTextNode(product[number][0]);
+        title_div.appendChild(title);
+        /*商品內容 */
+        let con_div=document.createElement("div");
+        con_div.className+="pro_con";
+        create_div.appendChild(con_div)
+        let con_mad=document.createTextNode(product[number][1]);
+        con_div.appendChild(con_mad);
+        /*價格 */
+        let price_div =document.createElement("div");
+        price_div.className+="price";
+        create_div.appendChild(price_div)
+        let price=document.createTextNode(product[number][2]);
+        price_div.appendChild(price);
     }
 }
