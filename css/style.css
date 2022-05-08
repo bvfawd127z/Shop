@@ -286,3 +286,16 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     cursor: pointer;
     color: rgb(33, 212, 152);
 }
+
+.pri_title{
+    text-align: center;
+    font-size: larger;
+    color: blue;
+    border: 1px rgb(104, 161, 210) dashed;
+    padding: 10px;
+}
+
+.margin_left{
+    margin :0 20vw;
+    padding: 10px;
+}
