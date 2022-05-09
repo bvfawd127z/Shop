@@ -22,8 +22,12 @@ window.onload=function(){
         ,['義大利麵','原產地(國):義大利','特價:169元','product/noodles.jpg']
         ,['披薩','原產地(國):美國','特價:495元','product/pizza.jpg']
     ];
-
     for(number=0;number<product.length;number++){
+        /*取得搜尋字串 */
+        let search = localStorage.getItem("search");
+        let search_fin= RegExp(search);
+        if (search===""){alert('請輸入搜尋商品'); return;}
+        if((search_fin.test(product[number][1])===true)||(search_fin.test(product[number][0])===true)){
         /*創建商品div*/
         let create=document.getElementById("product_create");
         let block=document.createElement("div");
@@ -54,7 +58,9 @@ window.onload=function(){
         price_div.className+="price";
         create_div.appendChild(price_div)
         let price=document.createTextNode(product[number][2]);
-        price_div.appendChild(price);
-
+        price_div.appendChild(price);}
     }
+    search="無資料";
+    localStorage.setItem("search",search);
 }
+

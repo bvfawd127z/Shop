@@ -45,5 +45,12 @@ function show_R(){
   document.getElementsByClassName('load')[0].style.display="none";
   imgsrc.src=imgar[img];
   }
+  /*跳頁及儲存跳頁資料 */
+  function storage(page){
+    let search = document.getElementById("search_block").value;
+    localStorage.setItem("search",search);
+    location.href=page;
+  }
+ 
 
 
