@@ -76,8 +76,9 @@ window.onload=function(){
       document.getElementsByClassName('none_p')[0].style.display='block';
       document.getElementsByClassName('product_page')[0].style.border='1px red solid';
     }else{
+      let search = localStorage.getItem("search");
       document.getElementsByClassName('result')[0].style.display='block';
-      document.getElementsByClassName('result')[0].innerHTML="搜尋結果共計:"+k+"項商品";
+      document.getElementsByClassName('result')[0].innerHTML="搜尋"+"「"+search+"」"+ "結果共計:"+k+"項商品";
     }
     search="無資料";
     localStorage.setItem("search",search);
