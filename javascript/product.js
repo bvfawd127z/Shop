@@ -11,16 +11,16 @@ function page(page){
 /*新增產品 */
 window.onload=function(){
     let product=[
-        ['肥美鮭魚','原產地(國):智利','特價:320元','product/product1.jpg']
-        ,['特級鮮乳','原產地(國):臺灣','特價:90元','product/product2.jpg']
-        ,['豪華咖啡蛋糕','原產地(國):美國','特價:129元','product/product3.jpg']
-        ,['點點糖果','原產地(國):美國','特價:79元','product/candy.jpg']
-        ,['高級巧克力','原產地(國):澳洲','特價:435元','product/chocolate.jpg']
-        ,['漢堡','原產地(國):美國','特價:149元','product/hamburger.jpg']
-        ,['柳橙果汁','原產地(國):臺灣','特價:60元','product/juice.jpg']
-        ,['檸檬','原產地(國):臺灣','特價:29元','product/lemon.jpg']
-        ,['義大利麵','原產地(國):義大利','特價:169元','product/noodles.jpg']
-        ,['披薩','原產地(國):美國','特價:495元','product/pizza.jpg']
+        ['肥美鮭魚','原產地(國):智利','特價:320元','product/product1.jpg','320']
+        ,['特級鮮乳','原產地(國):臺灣','特價:90元','product/product2.jpg','90']
+        ,['豪華咖啡蛋糕','原產地(國):美國','特價:129元','product/product3.jpg','129']
+        ,['點點糖果','原產地(國):美國','特價:79元','product/candy.jpg','79']
+        ,['高級巧克力','原產地(國):澳洲','特價:435元','product/chocolate.jpg','435']
+        ,['漢堡','原產地(國):美國','特價:149元','product/hamburger.jpg','149']
+        ,['柳橙果汁','原產地(國):臺灣','特價:60元','product/juice.jpg','60']
+        ,['檸檬','原產地(國):臺灣','特價:29元','product/lemon.jpg','29']
+        ,['義大利麵','原產地(國):義大利','特價:169元','product/noodles.jpg','169']
+        ,['披薩','原產地(國):美國','特價:495元','product/pizza.jpg','495']
     ];
 
     for(number=0;number<product.length;number++){
@@ -55,6 +55,19 @@ window.onload=function(){
         create_div.appendChild(price_div)
         let price=document.createTextNode(product[number][2]);
         price_div.appendChild(price);
-
+        /*購物車按鈕 */
+        let shopping_cart =document.createElement("button");
+        shopping_cart.className+="cart";
+        create_div.appendChild(shopping_cart)
+        let cart=document.createTextNode("加入購物車");
+        shopping_cart.setAttribute('onclick','addcart('+number+')');
+        shopping_cart.appendChild(cart);
     }
+}
+
+function addcart(number){
+  counts = localStorage.getItem("product"+number);
+  counts++;
+  localStorage.setItem("product"+number,counts);
+  alert(counts);
 }

@@ -66,6 +66,13 @@ window.onload=function(){
         create_div.appendChild(price_div)
         let price=document.createTextNode(product[number][2]);
         price_div.appendChild(price);
+        /*購物車按鈕 */
+        let shopping_cart =document.createElement("button");
+        shopping_cart.className+="cart";
+        create_div.appendChild(shopping_cart)
+        let cart=document.createTextNode("加入購物車");
+        shopping_cart.setAttribute('onclick','addcart('+number+')');
+        shopping_cart.appendChild(cart);
         /*計算數量 */
         k++;
         console.log(k);}

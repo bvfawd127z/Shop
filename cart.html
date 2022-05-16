@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <link href="css/product.css" rel="stylesheet" type="text/css">
+        <link href="css/cart.css" rel="stylesheet" type="text/css">
         <meta http-equiv="content-type" charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <tile></tile>
@@ -13,19 +13,22 @@
             </div>
             <div class="search">
                 <input type="type" id="search_block" value="">
-                <button onclick="storage('search.html')"  id="btn">搜尋商品</button>
+                <button onclick="storage('search.html')" id="btn">搜尋商品</button>
             </div>
             <div class="right_nav">
                 <div class="button_1"onclick="page('index.html')" >首頁</div>
-                <div class="button_1 border_bot"onclick="page('product.html')">商品</div>
+                <div class="button_1"onclick="page('product.html')">商品</div>
                 <div class="button_1"onclick="" >優惠</div>
-                <div class="button_1"onclick="page('cart.html')" >購物車</div>
+                <div class="button_1  border_bot"onclick="page('cart.html')" >購物車</div>
                 <div class="button_1"onclick="page('member.html')" >會員</div>
             </div>
         </div>
-        <div class="big_page">
-            <div class="product_page" id="product_create">
-
+        <div class="container" id="container">
+            <div class="cart_block_big gray_block">
+                <div class="check cart_block_small">選取</div>
+                <div class="pro_content cart_block_small">商品簡介</div>
+                <div class="counts cart_block_small">數量</div>
+                <div class="del cart_block_small">刪除</div>
             </div>
         </div>
         <div class="nav_down">
@@ -35,13 +38,13 @@
             </div>
             <div class="down_bl">
                 <div class="bl">聯絡我們</div>
-                <div class="bl"  onclick="page('privacy.html')">隱私權政策</div>
+                <div class="bl" onclick="page('privacy.html')">隱私權政策</div>
             </div>
             <div class="down_bl">
                 <div class="bl">關於我們</div>
                 <div class="bl">FB粉絲團</div>
             </div>
         </div>
-        <script src="javascript/product.js"></script> 
+        <script src="javascript/cart.js"></script> 
     </body>
 </html>
