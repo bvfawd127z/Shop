@@ -69,5 +69,4 @@ function addcart(number){
   counts = localStorage.getItem("product"+number);
   counts++;
   localStorage.setItem("product"+number,counts);
-  alert(counts);
 }
