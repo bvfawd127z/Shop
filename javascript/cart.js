@@ -38,6 +38,7 @@ function page(page){
         check.setAttribute('id','check'+i);
         block_b.appendChild(check);
         let checkbox =document.createElement("input");
+        checkbox.className+="checkbox";
         checkbox.setAttribute('id','checkbox'+i);
         checkbox.setAttribute('type','checkbox');
         check.appendChild(checkbox);
@@ -65,6 +66,38 @@ function page(page){
         pro_content_b.appendChild(con_div)
         let con_mad=document.createTextNode(product[i][1]+"。");
         con_div.appendChild(con_mad);
-    }
+        /*商品內容 */
+        let single_price=document.createElement("div");
+        single_price.className+="single red";
+        block_b.appendChild(single_price)
+        let single=document.createTextNode("$"+product[i][4]);
+        single_price.appendChild(single);
+        /*建立數量下拉式選單 */
+        let counts=document.createElement("div");
+        counts.className+="counts";
+        counts.setAttribute("id","counts"+i);
+        block_b.appendChild(counts);
+        let counts_id = document.getElementById("counts"+i);
+        let value = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]; 
+        let select = document.createElement("select");
+        select.setAttribute("id","select"+i);
+        counts_id.appendChild(select);
+        select.length = 0;
+        for(let x = 0;x<value.length;x++){ 
+          let option = document.createElement("option"); 
+          option.appendChild(document.createTextNode(value[x])); 
+          select.appendChild(option);
+        }
+        value= localStorage.getItem("product"+i);
+        select.options[value-1].selected = true;
+        /*小計*/
+        let totals = document.createElement("div");
+        totals.setAttribute("id","totals"+i);
+        totals.className+="totals";
+        block_b.appendChild(totals);
+        let totals_price=document.createTextNode(product[i][4]*value);
+        totals.appendChild(totals_price);
+
+}
 }
 }

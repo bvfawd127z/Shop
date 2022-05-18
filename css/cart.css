@@ -123,6 +123,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     width: 100%;
     border: 0.5px  inset;
     height: 50px;
+    box-sizing: border-box;
 }
 
 .cart_block{
@@ -130,6 +131,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     width: 100%;
     border: 0.5px  inset;
     height: 100px;
+    box-sizing: border-box;
 }
 
 .cart_block:hover{
@@ -139,19 +141,46 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
 .check{
     width: 10%;
     border-right: 0.5px inset;
+    box-sizing: border-box;
 }
 
 .pro_content{
-    width: 70%;
+    width: 50%;
     border-right: 0.5px inset;
     display: flex;
+    box-sizing: border-box;
 }
 .counts{
     width: 10%;
     border-right: 0.5px inset;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.totals{
+    width: 10%;
+    border-right: 0.5px inset;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.single{
+    width: 10%;
+    border-right: 0.5px inset;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.red{
+    color: red;
+}
+
 .del{
     width: 10%;
+    box-sizing: border-box;
 }
 .cart_block_small{
     font-weight: bolder;
@@ -160,6 +189,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     justify-content: center;
     align-items: center;
     height: 50px;
+    box-sizing: border-box;
 }
 .cart_block_s{
     font-weight: bolder;
@@ -170,9 +200,9 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     height: 100px;
 }
 .product_img{
-    width: 16.5%;
+    width: 22%;
     height: 98px;
-    border:0.5px #000 solid;
+    border:0.5px  inset;
 }
 
 .gray_block{
@@ -184,17 +214,23 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15%;
+    width: 20%;
     height: 102px;
-    font-size: 25px;
+    font-size: 20px;
     padding: 3px;
+    font-weight: bolder;
 }
 
 .pro_con{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 16px;
     width: fit-content;
     padding: 5px;
+}
+
+.checkbox{
+    width:20px;
+    height: 20px;
 }
