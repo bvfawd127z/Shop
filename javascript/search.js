@@ -90,9 +90,15 @@ window.onload=function(){
     search="無資料";
     localStorage.setItem("search",search);
 }
-
 function addcart(number){
   counts = localStorage.getItem("product"+number);
-  counts++;
-  localStorage.setItem("product"+number,counts);
+  if (counts>=15){
+    counts=15
+    localStorage.setItem("product"+number,15);
+    alert("已達購物車一次購買數量最大上限");
+  }else{
+    counts++;
+    localStorage.setItem("product"+number,counts);
+  }
+
 }

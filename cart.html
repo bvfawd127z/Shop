@@ -18,14 +18,14 @@
             <div class="right_nav">
                 <div class="button_1"onclick="page('index.html')" >首頁</div>
                 <div class="button_1"onclick="page('product.html')">商品</div>
-                <div class="button_1"onclick="" >優惠</div>
+                <div class="button_1"onclick="reload()" >優惠</div>
                 <div class="button_1  border_bot"onclick="page('cart.html')" >購物車</div>
                 <div class="button_1"onclick="page('member.html')" >會員</div>
             </div>
         </div>
         <div class="container" id="container">
             <div class="cart_block_big gray_block">
-                <div class="check cart_block_small">選取</div>
+                <div class="check cart_block_small"><input type="checkbox" id="check_all" class="checkbox" onclick="check_all()" ></div>
                 <div class="pro_content cart_block_small">商品簡介</div>
                 <div class="single cart_block_small">單價</div>
                 <div class="counts cart_block_small">數量</div>

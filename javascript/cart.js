@@ -9,7 +9,7 @@ function page(page){
     location.href=page;
   }
  /*獲取購物車商品 */
- window.onload=function(){
+ window.onload=function reload(){
     let product=[
         ['肥美鮭魚','原產地(國):智利','特價:320元','product/product1.jpg','320']
         ,['特級鮮乳','原產地(國):臺灣','特價:90元','product/product2.jpg','90']
@@ -39,7 +39,7 @@ function page(page){
         block_b.appendChild(check);
         let checkbox =document.createElement("input");
         checkbox.className+="checkbox";
-        checkbox.setAttribute('id','checkbox'+i);
+        checkbox.setAttribute('id','check_box'+i);
         checkbox.setAttribute('type','checkbox');
         check.appendChild(checkbox);
         /*商品簡介div */
@@ -81,6 +81,7 @@ function page(page){
         let value = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]; 
         let select = document.createElement("select");
         select.setAttribute("id","select"+i);
+        select.setAttribute("onchange","totals_s(this.id)");
         counts_id.appendChild(select);
         select.length = 0;
         for(let x = 0;x<value.length;x++){ 
@@ -97,7 +98,55 @@ function page(page){
         block_b.appendChild(totals);
         let totals_price=document.createTextNode(product[i][4]*value);
         totals.appendChild(totals_price);
+        /*刪除 */
+        let del_div = document.createElement("div");
+        del_div.className+="del";
+        block_b.appendChild(del_div);
+        let del = document.createElement("input");
+        del.className+="del_button";
+        del.setAttribute("id","del"+i);
+        del.setAttribute("type","button");
+        del.setAttribute("value","取消");
+        del.setAttribute("onclick","delete_cart(this.id)");
+        del_div.appendChild(del);
+}
+}
+}
 
+/*刪除 */
+function delete_cart(id){
+  let i = id.slice(3,10);
+  localStorage.setItem("product"+i,"0");
+  window.location.reload(); 
 }
+/*計算小計 */
+function totals_s(id){
+  let i = id.slice(6,10);
+  let selected = document.getElementById(id);
+  let value = selected.value;
+  localStorage.setItem("product"+i,value);
+  window.location.reload(); 
 }
+/*全選 */
+function check_all(){
+
+  let top_check =document.getElementById("check_all"); 
+  if(top_check.checked==false){
+    for(let i =0;i<10;i++){
+      value= localStorage.getItem("product"+i)
+      if (value>0){
+        let check = document.getElementById("check_box"+i);
+        check.checked=false;
+     }
+    }
+  }else{
+    for(let i =0;i<10;i++){
+      value= localStorage.getItem("product"+i)
+      if (value>0){
+        let check = document.getElementById("check_box"+i);
+        check.checked=true;
+     }
+    }
+  }
+
 }
