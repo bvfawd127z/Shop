@@ -115,9 +115,26 @@ function page(page){
 
 /*刪除 */
 function delete_cart(id){
+  let all=0;
+  let all_fa = 0;
+  for(let i=0;i<10;i++){
+    let value= localStorage.getItem("product"+i)
+    if(value>0){
+    
+      all++;
+      let check = document.getElementById("check_box"+i);
+      if(check.checked===false){
+        all_fa++
+        }
+      }
+    }
+    if(all===all_fa){
+      alert("請勾選欲刪除商品");
+      return;
+  }
   let top_check =document.getElementById("check_all"); 
   if (top_check.checked===true){
-    let yes = confirm('確定刪除所有商品？');
+    let yes = confirm('確定清空購物車？');
     if (yes) {
       for(let i =0;i<10;i++){
         let value= localStorage.getItem("product"+i)
@@ -127,11 +144,22 @@ function delete_cart(id){
       }
     } 
   }else{
-    let result = id.slice(3,10);
-    localStorage.setItem("product"+result,"0");
+    let yes = confirm('確定清除商品？');
+    if (yes) {
+    for(let i =0;i<10;i++){
+      let value= localStorage.getItem("product"+i)
+      if (value>0){
+        let check = document.getElementById("check_box"+i);
+        if(check.checked===true){
+          localStorage.setItem("product"+i,"0");
+        }
+      }
+    }
+    }
   }
-  window.location.reload(); 
-}
+    window.location.reload(); 
+  }
+
 /*計算小計 */
 function totals_s(id){
   let i = id.slice(6,10);
@@ -162,3 +190,5 @@ function check_all(){
   }
 
 }
+
+/* */
