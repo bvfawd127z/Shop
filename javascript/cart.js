@@ -115,8 +115,21 @@ function page(page){
 
 /*刪除 */
 function delete_cart(id){
-  let i = id.slice(3,10);
-  localStorage.setItem("product"+i,"0");
+  let top_check =document.getElementById("check_all"); 
+  if (top_check.checked===true){
+    let yes = confirm('確定刪除所有商品？');
+    if (yes) {
+      for(let i =0;i<10;i++){
+        let value= localStorage.getItem("product"+i)
+        if (value>0){
+          localStorage.setItem("product"+i,"0");
+       }
+      }
+    } 
+  }else{
+    let result = id.slice(3,10);
+    localStorage.setItem("product"+result,"0");
+  }
   window.location.reload(); 
 }
 /*計算小計 */
@@ -129,7 +142,6 @@ function totals_s(id){
 }
 /*全選 */
 function check_all(){
-
   let top_check =document.getElementById("check_all"); 
   if(top_check.checked==false){
     for(let i =0;i<10;i++){
