@@ -53,4 +53,8 @@ function show_R(){
   }
  
 
-
+  /*呼叫商品頁面 */
+  function product_pages(product){
+    localStorage.setItem("product_pages",product);
+    location.href="product_pages.html";
+  }
