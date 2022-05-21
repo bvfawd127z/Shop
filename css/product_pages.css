@@ -195,3 +195,74 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     text-align: center;
     font-weight: bolder;
 }
+
+.con_title{
+    font-size: 27px;
+    font-weight: bold;
+    width: 30vw;
+    height: 2.5vw;
+    text-align: center;
+    padding: 0.5vw;
+    box-sizing: content-box;
+}
+.content{
+    width: 30vw;
+    height: 25vw;
+    box-sizing: border-box;
+}
+
+.con_s{
+    width: 30vw;
+    height: 22vw;
+    padding: 20px;
+    white-space:pre-line;
+    font-size: 20px;
+    border-top: 1px outset;
+    box-sizing: border-box;
+}
+
+.price{
+    line-height: 3vw;
+    padding-left: 18vw;
+    width: 30vw;
+    height:3vw;
+    font-size: 22px;
+    color: red;
+    font-weight: bold;
+    font-style:italic;
+    border-bottom: 1px inset;
+    border-top: 1px outset;
+    box-sizing: border-box;
+}
+
+.button{
+    position: relative;
+    left: 2.5vw;
+    width: 25vw;
+    height: 9vw;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    box-sizing: border-box;
+
+}
+.add_cart{
+    background-color: rgb(134, 134, 236);
+    width: 10vw;
+    height: 2.5vw;
+    border-radius: 2000px;
+    border: none;
+}
+
+.cart{
+    background-color: rgb(227, 48, 168);
+    width: 10vw;
+    height: 2.5vw;
+    border-radius: 2000px;
+    border: none;
+}
+
+.add_cart:hover,.cart:hover{
+    cursor: pointer;
+    opacity: 0.75;
+}

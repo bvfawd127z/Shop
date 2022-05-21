@@ -39,7 +39,7 @@ window.onload=function(){
         let create=document.getElementById("product_create");
         let block=document.createElement("div");
         block.className+="pro_div";
-        block.setAttribute('id','div_id'+number)
+        block.setAttribute('id','div_id'+number);
         create.appendChild(block);
         /*商品圖片 */
         let create_div=document.getElementById('div_id'+number);
@@ -47,22 +47,26 @@ window.onload=function(){
         img_pro.src=product[number][3];
         img_pro.className+="product_img";
         img_pro.setAttribute('id','product_id'+number);
+        img_pro.setAttribute('onclick','product_pages('+number+')')
         create_div.appendChild(img_pro);
         /*商品標題 */
         let title_div=document.createElement("div");
         title_div.className+="pro_title";
         create_div.appendChild(title_div)
+        title_div.setAttribute('onclick','product_pages('+number+')')
         let title=document.createTextNode(product[number][0]);
         title_div.appendChild(title);
         /*商品內容 */
         let con_div=document.createElement("div");
         con_div.className+="pro_con";
+        con_div.setAttribute('onclick','product_pages('+number+')')
         create_div.appendChild(con_div)
         let con_mad=document.createTextNode(product[number][1]);
         con_div.appendChild(con_mad);
         /*價格 */
         let price_div =document.createElement("div");
         price_div.className+="price";
+        price_div.setAttribute('onclick','product_pages('+number+')')
         create_div.appendChild(price_div)
         let price=document.createTextNode(product[number][2]);
         price_div.appendChild(price);
@@ -102,3 +106,9 @@ function addcart(number){
   }
 
 }
+
+  /*呼叫商品頁面 */
+  function product_pages(product){
+    localStorage.setItem("product_pages",product);
+    location.href="product_pages.html";
+  }

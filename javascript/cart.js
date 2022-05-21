@@ -52,6 +52,7 @@ function page(page){
         let title_div=document.createElement("div");
         title_div.className+="pro_title";
         pro_content_b.appendChild(title_div)
+        title_div.setAttribute('onclick','product_pages('+i+')')
         let title=document.createTextNode(product[i][0]);
         title_div.appendChild(title);
         /*商品圖片 */ 
@@ -191,4 +192,8 @@ function check_all(){
 
 }
 
-/* */
+  /*呼叫商品頁面 */
+  function product_pages(product){
+    localStorage.setItem("product_pages",product);
+    location.href="product_pages.html";
+  }
