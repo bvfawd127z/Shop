@@ -99,7 +99,7 @@ function page(page){
         block_b.appendChild(totals);
         let totals_price=document.createTextNode(product[i][4]*value);
         totals.appendChild(totals_price);
-        /*刪除 */
+        /*刪除按鈕 */
         let del_div = document.createElement("div");
         del_div.className+="del";
         block_b.appendChild(del_div);

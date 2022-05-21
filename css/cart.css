@@ -23,7 +23,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     display:block;
     height: 8.5vh;
     width: 20%;
-    font-size:8.5vh;
+    font-size:3.5vw;
     line-height: 8.5vh;
     text-align: center;
     font-weight: bolder;
@@ -252,14 +252,11 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     align-items: center;
     width: 20%;
     height: 102px;
-    font-size: 20px;
+    font-size: 19px;
     padding: 3px;
     font-weight: bolder;
     cursor: pointer;
-}
-
-.pro_title:active{
-    transform: translateY(3px);
+    box-sizing: border-box;
 }
 
 .pro_con{

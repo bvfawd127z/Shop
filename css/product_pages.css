@@ -23,7 +23,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     display:block;
     height: 8.5vh;
     width: 20%;
-    font-size:8.5vh;
+    font-size:3.5vw;
     line-height: 8.5vh;
     text-align: center;
     font-weight: bolder;
@@ -167,6 +167,8 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     box-shadow: 0px 0px 1px 1px rgba(223, 16, 255, 0.05);
     margin: 30px auto;
     box-sizing: border-box;
+    border-radius: 100px 100px 100px 100px;
+    overflow: hidden;
     background: linear-gradient(to bottom right, rgba(115, 34, 255, .05), rgba(0, 255, 60, .05),rgba(255,255,255,.05));
 
 }
@@ -189,7 +191,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     left: 10%;
     width: 80%;
     height: fit-content;
-    margin: 15px 0;
+    margin-top: 20px;
     font-size: 40px;
     color: rgb(159, 140, 196);
     text-align: center;
