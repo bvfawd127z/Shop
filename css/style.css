@@ -187,8 +187,8 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     width:fit-content;
     height:fit-content ;
     font-size: 1.6vw;
-    margin-left: 3vw;
-    margin-right: 6vw;
+    margin-left: 6vw;
+    margin-right: 3vw;
     font-weight: bold;
     border: 1px solid gray ;
     text-align: center;
