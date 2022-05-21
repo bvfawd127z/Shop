@@ -8,21 +8,20 @@ function page(page){
     localStorage.setItem("search",search);
     location.href=page;
   }
+  let product=[
+    ['肥美鮭魚','原產地(國):智利','特價:320元','product/product1.jpg','320']
+    ,['特級鮮乳','原產地(國):臺灣','特價:90元','product/product2.jpg','90']
+    ,['豪華咖啡蛋糕','原產地(國):美國','特價:129元','product/product3.jpg','129']
+    ,['點點糖果','原產地(國):美國','特價:79元','product/candy.jpg','79']
+    ,['高級巧克力','原產地(國):澳洲','特價:435元','product/chocolate.jpg','435']
+    ,['漢堡','原產地(國):美國','特價:149元','product/hamburger.jpg','149']
+    ,['柳橙果汁','原產地(國):臺灣','特價:60元','product/juice.jpg','60']
+    ,['檸檬','原產地(國):臺灣','特價:29元','product/lemon.jpg','29']
+    ,['義大利麵','原產地(國):義大利','特價:169元','product/noodles.jpg','169']
+    ,['披薩','原產地(國):美國','特價:495元','product/pizza.jpg','495']
+];
 /*新增產品 */
 window.onload=function(){
-    let product=[
-        ['肥美鮭魚','原產地(國):智利','特價:320元','product/product1.jpg','320']
-        ,['特級鮮乳','原產地(國):臺灣','特價:90元','product/product2.jpg','90']
-        ,['豪華咖啡蛋糕','原產地(國):美國','特價:129元','product/product3.jpg','129']
-        ,['點點糖果','原產地(國):美國','特價:79元','product/candy.jpg','79']
-        ,['高級巧克力','原產地(國):澳洲','特價:435元','product/chocolate.jpg','435']
-        ,['漢堡','原產地(國):美國','特價:149元','product/hamburger.jpg','149']
-        ,['柳橙果汁','原產地(國):臺灣','特價:60元','product/juice.jpg','60']
-        ,['檸檬','原產地(國):臺灣','特價:29元','product/lemon.jpg','29']
-        ,['義大利麵','原產地(國):義大利','特價:169元','product/noodles.jpg','169']
-        ,['披薩','原產地(國):美國','特價:495元','product/pizza.jpg','495']
-    ];
-
     for(number=0;number<product.length;number++){
         /*創建商品div*/
         let create=document.getElementById("product_create");
@@ -64,7 +63,8 @@ window.onload=function(){
         shopping_cart.className+="cart";
         create_div.appendChild(shopping_cart)
         let cart=document.createTextNode("加入購物車");
-        shopping_cart.setAttribute('onclick','addcart('+number+')');
+        shopping_cart.setAttribute('id','button'+number);
+        shopping_cart.setAttribute('onclick','addcart('+number+');');
         shopping_cart.appendChild(cart);
     }
 }
@@ -87,3 +87,5 @@ function addcart(number){
     localStorage.setItem("product_pages",product);
     location.href="product_pages.html";
   }
+
+  /*加入購物車拋物線 */

@@ -57,7 +57,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體'; 
 }
 
 .right_nav{
-    width: 40%;
+    width: 40vw;
     display: inline-flex;
     font-size: 18px;
 }
@@ -167,6 +167,7 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體'; 
 
 
 .pro_div{
+    overflow: hidden;
     display: block;
     padding: 0%;
     text-align: center;
@@ -179,7 +180,6 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體'; 
     height: auto;
     border: 1px black solid;
     border-radius: 5% 5% 0% 0%;
-    overflow: hidden;
     transition: all linear .3s;
     box-sizing: content-box;
 }
@@ -257,5 +257,17 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體'; 
 }
 
 .product_img:hover,.pro_title:hover,.pro_con:hover,.price:hover{
+    cursor: pointer;
+}
+
+.cart_icon{
+    width: 5vw;
+    height: 5vw;
+    position: fixed;
+    right: 1vw;
+    bottom:1vh ;
+    box-sizing: border-box;
+    background-image:url(../product/cart.png) ;
+    background-size: contain;
     cursor: pointer;
 }
