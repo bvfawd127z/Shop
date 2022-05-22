@@ -75,13 +75,20 @@ window.onload=function(){
         shopping_cart.className+="cart";
         create_div.appendChild(shopping_cart)
         let cart=document.createTextNode("加入購物車");
+        shopping_cart.setAttribute('id','button'+number);
         shopping_cart.setAttribute('onclick','addcart('+number+')');
         shopping_cart.appendChild(cart);
+        /*建立加入購物車img */
+        let pro_img = document.createElement("img");
+        pro_img.src=product[number][3];
+        pro_img.className+="pro_img";
+        pro_img.setAttribute('id','img'+number)
+        create_div.appendChild(pro_img);
         /*計算數量 */
         k++;
         console.log(k);}
     }
-    /**/
+    /*顯示搜尋結果標題*/
     if (k===0){
       document.getElementsByClassName('none')[0].style.display='block';
       document.getElementsByClassName('none_p')[0].style.display='block';
@@ -94,17 +101,43 @@ window.onload=function(){
     search="無資料";
     localStorage.setItem("search",search);
 }
+
+/*加入購物車及動畫 */
+let action = true;
 function addcart(number){
   counts = localStorage.getItem("product"+number);
+  let ball = document.getElementById('img'+number)
+  let btn = document.getElementById('button'+number);
+  let bodyTop = document.documentElement.scrollTop;
+  if(action ===true){
+  action=false;
   if (counts>=15){
     counts=15
     localStorage.setItem("product"+number,15);
     alert("已達購物車一次購買數量最大上限");
   }else{
+      ball.style.display = 'block';
+      ball.style.transition = 'left 0s, top 0s ,width 0s,height 0s';
+      setTimeout(()=>{
+          ball.style.left = '95vw';
+          ball.style.top = '95vh';
+          ball.style.width = '0%';
+          ball.style.height = '0%';
+          ball.style.transition = 'left 0.4s, top 0.4s ,width 0.4s,height 0.4s';
+      }, 50)
+      ball.style.width = '3vw';
+      ball.style.height = '3vw';
     counts++;
     localStorage.setItem("product"+number,counts);
   }
-
+  ball.style.left = btn.offsetLeft+'px';
+  ball.style.top =  (btn.offsetTop-bodyTop)+'px';
+  setTimeout(()=>{
+    action=true;
+  },400)
+}else{
+  return;
+}
 }
 
   /*呼叫商品頁面 */
