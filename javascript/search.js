@@ -21,7 +21,7 @@ window.onload=function(){
     ,['檸檬','原產地(國):臺灣','特價:29元','product/lemon.jpg','29']
     ,['義大利麵','原產地(國):義大利','特價:169元','product/noodles.jpg','169']
     ,['披薩','原產地(國):美國','特價:495元','product/pizza.jpg','495']
-];
+  ];
     let k = 0;
     for(number=0;number<product.length;number++){
         /*取得搜尋字串 */
@@ -100,6 +100,14 @@ window.onload=function(){
     }
     search="無資料";
     localStorage.setItem("search",search);
+    /*購物車上數量 */
+    let totals =0;
+    for(i=0;i<10;i++) {
+      let value= localStorage.getItem("product"+i);
+      totals = Number(totals)+Number(value);
+    }
+    let all = document.getElementById('all_pro');
+    all.textContent = totals;
 }
 
 /*加入購物車及動畫 */
@@ -113,6 +121,13 @@ function addcart(number){
   if (counts>=15){
     counts=15
     localStorage.setItem("product"+number,15);
+    let totals =0;
+    for(i=0;i<10;i++) {
+    let value= localStorage.getItem("product"+i);
+    totals = Number(totals)+Number(value);
+     }
+     let all = document.getElementById('all_pro');
+     all.textContent = totals;
     alert("已達購物車一次購買數量最大上限");
   }else{
       ball.style.display = 'block';
@@ -135,7 +150,14 @@ function addcart(number){
   ball.style.left = img.offsetLeft+'px';
   ball.style.top =  (img.offsetTop-bodyTop)+'px';
   setTimeout(()=>{
-    action=true;
+  let totals =0;
+  for(i=0;i<10;i++) {
+    let value= localStorage.getItem("product"+i);
+    totals = Number(totals)+Number(value);
+  }
+  let all = document.getElementById('all_pro');
+  all.textContent = totals;
+  action=true;
   },400)
 }else{
   return;

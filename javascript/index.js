@@ -1,3 +1,14 @@
+window.onload = function(){
+      /*購物車上數量 */
+      let totals =0;
+      for(i=0;i<10;i++) {
+      let value= localStorage.getItem("product"+i);
+      totals = Number(totals)+Number(value);
+       }
+       let all = document.getElementById('all_pro');
+       all.textContent = totals;
+}
+
 /*文字顏色*/
 function food_content(x){
     document.getElementsByClassName(x)[0].style.display="block";

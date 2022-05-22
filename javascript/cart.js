@@ -112,6 +112,14 @@ function page(page){
         del_div.appendChild(del);
 }
 }
+    /*購物車上數量 */
+    let totals =0;
+    for(i=0;i<10;i++) {
+      let value= localStorage.getItem("product"+i);
+      totals = Number(totals)+Number(value);
+    }
+    let all = document.getElementById('all_pro');
+    all.textContent = totals;
 }
 
 /*刪除 */

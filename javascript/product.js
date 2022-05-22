@@ -73,6 +73,14 @@ window.onload=function(){
         pro_img.setAttribute('id','img'+number)
         create_div.appendChild(pro_img);
     }
+    /*購物車上數量 */
+    let totals =0;
+    for(i=0;i<10;i++) {
+    let value= localStorage.getItem("product"+i);
+    totals = Number(totals)+Number(value);
+     }
+     let all = document.getElementById('all_pro');
+     all.textContent = totals;
 }
 
 /*加入購物車及動畫 */
@@ -86,11 +94,17 @@ function addcart(number){
   if (counts>=15){
     counts=15
     localStorage.setItem("product"+number,15);
+    let totals =0;
+    for(i=0;i<10;i++) {
+    let value= localStorage.getItem("product"+i);
+    totals = Number(totals)+Number(value);
+     }
+     let all = document.getElementById('all_pro');
+     all.textContent = totals;
     alert("已達購物車一次購買數量最大上限");
   }else{
       ball.style.display = 'block';
       ball.style.transition = 'left 0s, top 0s ,width 0s,height 0s,transform 0s';
-      
       setTimeout(()=>{
           ball.style.left = '95vw';
           ball.style.top = '95vh';
@@ -109,6 +123,13 @@ function addcart(number){
   ball.style.left = img.offsetLeft+'px';
   ball.style.top =  (img.offsetTop-bodyTop)+'px';
   setTimeout(()=>{
+    let totals =0;
+    for(i=0;i<10;i++) {
+    let value= localStorage.getItem("product"+i);
+    totals = Number(totals)+Number(value);
+    }
+    let all = document.getElementById('all_pro');
+    all.textContent = totals;
     action=true;
   },400)
 }else{

@@ -68,6 +68,14 @@
     pro_img.className+="pro_img";
     pro_img.setAttribute('id','img'+id)
     btn.appendChild(pro_img);
+    /*購物車上數量 */
+    let totals =0;
+    for(i=0;i<10;i++) {
+      let value= localStorage.getItem("product"+i);
+      totals = Number(totals)+Number(value);
+    }
+    let all = document.getElementById('all_pro');
+    all.textContent = totals;
   }
 
 
@@ -77,13 +85,19 @@ function addcart(){
   let id = localStorage.getItem("product_pages");
   counts = localStorage.getItem("product"+id);
   let ball = document.getElementById('img'+id)
-  let btn = document.getElementById('addcart');
   let bodyTop = document.documentElement.scrollTop;
   if(action ===true){
   action=false;
   if (counts>=15){
     counts=15
     localStorage.setItem("product"+id,15);
+    let totals =0;
+    for(i=0;i<10;i++) {
+    let value= localStorage.getItem("product"+i);
+    totals = Number(totals)+Number(value);
+     }
+     let all = document.getElementById('all_pro');
+     all.textContent = totals;
     alert("已達購物車一次購買數量最大上限");
   }else{
       ball.style.display = 'block';
@@ -98,6 +112,7 @@ function addcart(){
       }, 50)
       ball.style.width = '50vw';
       ball.style.height = '37.5vw';
+      ball.style.transform="rotate(0deg)";
     counts++;
     localStorage.setItem("product"+id,counts);
   }
@@ -105,6 +120,13 @@ function addcart(){
   ball.style.left = img.offsetLeft+'px';
   ball.style.top =  (img.offsetTop-bodyTop)+'px';
   setTimeout(()=>{
+    let totals =0;
+    for(i=0;i<10;i++) {
+    let value= localStorage.getItem("product"+i);
+    totals = Number(totals)+Number(value);
+    }
+    let all = document.getElementById('all_pro');
+    all.textContent = totals;
     action=true;
   },400)
 }else{

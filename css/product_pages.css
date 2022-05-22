@@ -290,3 +290,13 @@ html, body {  margin: 0; padding: 0; font-size: 24px; font-family: '標楷體';}
     position: fixed;
     display: none;
 }
+
+.all_pro{
+    height: 1vw;
+    width: 1vw;
+    position: fixed;
+    right: 1.8vw;
+    bottom: calc(1vh + 5vw);
+    color: red;
+    font-weight: bolder;
+}
