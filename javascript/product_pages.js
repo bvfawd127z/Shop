@@ -61,21 +61,57 @@
     let price_div = document.getElementById("price");
     let price_con = document.createTextNode(product[id][2])
     price_div.appendChild(price_con);
+    /*建立加入購物車img */
+    let btn = document.getElementById('addcart');
+    let pro_img = document.createElement("img");
+    pro_img.src=product[id][3];
+    pro_img.className+="pro_img";
+    pro_img.setAttribute('id','img'+id)
+    btn.appendChild(pro_img);
   }
 
-/*加入購物車 */
-  function addcart(){
-    let id = localStorage.getItem("product_pages");
-    counts = localStorage.getItem("product"+id);
-    if (counts>=15){
-      counts=15
-      localStorage.setItem("product"+id,15);
-      alert("已達購物車一次購買數量最大上限");
-    }else{
-      counts++;
-      localStorage.setItem("product"+id,counts);
-    }
+
+/*加入購物車及動畫 */
+let action = true;
+function addcart(){
+  let id = localStorage.getItem("product_pages");
+  counts = localStorage.getItem("product"+id);
+  let ball = document.getElementById('img'+id)
+  let btn = document.getElementById('addcart');
+  let bodyTop = document.documentElement.scrollTop;
+  if(action ===true){
+  action=false;
+  if (counts>=15){
+    counts=15
+    localStorage.setItem("product"+id,15);
+    alert("已達購物車一次購買數量最大上限");
+  }else{
+      ball.style.display = 'block';
+      ball.style.transition = 'left 0s, top 0s ,width 0s,height 0s,transform 0s';
+      setTimeout(()=>{
+          ball.style.left = '95vw';
+          ball.style.top = '95vh';
+          ball.style.transform="rotate(360deg)";
+          ball.style.width = '0%';
+          ball.style.height = '0%';
+          ball.style.transition = 'left 0.4s, top 0.4s ,width 0.4s,height 0.4s,transform 0.4s';
+      }, 50)
+      ball.style.width = '50vw';
+      ball.style.height = '37.5vw';
+    counts++;
+    localStorage.setItem("product"+id,counts);
   }
+  let img = document.getElementById('image_content');
+  ball.style.left = img.offsetLeft+'px';
+  ball.style.top =  (img.offsetTop-bodyTop)+'px';
+  setTimeout(()=>{
+    action=true;
+  },400)
+}else{
+  return;
+}
+}
+
 /*加入後跳轉購物車*/
   function cart(){
     let id = localStorage.getItem("product_pages");

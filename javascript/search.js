@@ -107,7 +107,6 @@ let action = true;
 function addcart(number){
   counts = localStorage.getItem("product"+number);
   let ball = document.getElementById('img'+number)
-  let btn = document.getElementById('button'+number);
   let bodyTop = document.documentElement.scrollTop;
   if(action ===true){
   action=false;
@@ -117,21 +116,24 @@ function addcart(number){
     alert("已達購物車一次購買數量最大上限");
   }else{
       ball.style.display = 'block';
-      ball.style.transition = 'left 0s, top 0s ,width 0s,height 0s';
+      ball.style.transition = 'left 0s, top 0s ,width 0s,height 0s,transform 0s';
       setTimeout(()=>{
           ball.style.left = '95vw';
           ball.style.top = '95vh';
+          ball.style.transform="rotate(360deg)";
           ball.style.width = '0%';
           ball.style.height = '0%';
-          ball.style.transition = 'left 0.4s, top 0.4s ,width 0.4s,height 0.4s';
+          ball.style.transition = 'left 0.4s, top 0.4s ,width 0.4s,height 0.4s,transform 0.4s';
       }, 50)
-      ball.style.width = '3vw';
-      ball.style.height = '3vw';
+      ball.style.width = '14.5vw';
+      ball.style.height = '10.5vw';
+      ball.style.transform="rotate(0deg)";
     counts++;
     localStorage.setItem("product"+number,counts);
   }
-  ball.style.left = btn.offsetLeft+'px';
-  ball.style.top =  (btn.offsetTop-bodyTop)+'px';
+  let img = document.getElementById('product_id'+number);
+  ball.style.left = img.offsetLeft+'px';
+  ball.style.top =  (img.offsetTop-bodyTop)+'px';
   setTimeout(()=>{
     action=true;
   },400)
